@@ -2,7 +2,7 @@
 
 Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Written in Python3.
 
-## FEATURES:
+## Features
   - Sort class *(ADDED 6/15/2020)
   - Populate array with random elements function *(ADDED 6/15/2020)
   - Stopwatch class implementation  *(ADDED 6/15/2020)
@@ -16,7 +16,7 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Description of each sort page
   - How to code each sort page
   
-## *TEMPORARY*
+### Temporary Features
   - Console-based print array function *(ADDED 6/15/2020)
   - Console clear function *(ADDED 6/15/2020)
 
