@@ -16,7 +16,7 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Description of each sort page
   - How to code each sort page
   
-### Temporary Features
+## Temporary Features
   - Console-based print array function *(ADDED 6/15/2020)
   - Console clear function *(ADDED 6/15/2020)
 
