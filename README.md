@@ -11,7 +11,7 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Quick Sort function
   - Selection Sort function
   - Merge Sort function
-  - Heap sort function
+  - Counting Sort function
   - GUI representation with Tkitner
   - Description of each sort page
   - How to code each sort page
