@@ -9,10 +9,14 @@ class Sorter:
       self.array = []
       self.stopwatch = stopwatch.Timer()
 
-    def populateArray(self):
-        """ Populates array with 15 distinct, random integers. """
-        for _ in range(0, 15): # _ = unused
-            number = random.randint(1, 100)
+    def PopulateArray(self, minValue, maxValue, populationSize):
+        """ Populates array with random, distinct integers. """
+        
+        # resets array
+        self.array = []
+        
+        for _ in range(populationSize): # _ = unused
+            number = random.randint(minValue, maxValue+1)
 
             if number in self.array:
                 # number generated is not distinct
@@ -23,12 +27,12 @@ class Sorter:
                 # number generated is distinct
                 self.array.append(number)
                  
-    def clearConsole(self):
+    def ClearConsole(self):
         """ Clears console. """
         clear = lambda: os.system('cls')
         clear()
 
-    def printArray(self, num1, num2):
+    def PrintArray(self, num1, num2):
         """ Prints array, along with highlighting two elements being compared. """
         for element in self.array:
             if element == num1 or element == num2:
@@ -36,7 +40,7 @@ class Sorter:
             else:
                 print(element, end = " ")
         
-    def bubbleSort(self):
+    def BubbleSort(self):
         """ Sorts an array via swapping elements if the next is greater. """
         self.stopwatch.start()
         passNumber = 0
@@ -46,11 +50,11 @@ class Sorter:
             for j in range(0, len(self.array) - i - 1): # last i elements are already in place 
                 # sleeps program for 1 second
                 time.sleep(1)
-                self.clearConsole()
+                self.ClearConsole()
 
                 # bubble sort printing
                 print(f"Pass {passNumber}:", end = " ")
-                self.printArray(self.array[j], self.array[j+1])
+                self.PrintArray(self.array[j], self.array[j+1])
                 print(f"\nComparing {self.array[j]} > {self.array[j + 1]}")
                 
                 if self.array[j] > self.array[j+1] :  # Swap if the element found is greater 
