@@ -42,6 +42,13 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Console-based print array function *(ADDED 6/15/2020)
   - Console clear function *(ADDED 6/15/2020)
 
+## Function Documentation
+  - Sort Class
+  - Sort Class Functions
+  - Main Module Functions
+  - Tkinter Notes
+  - Timer Class *(ADDED 6/16/2020)
+  - Timer Class Functions *(ADDED 6/16/2020)
 ## Bug Fixes
   - Timer Data Member Exception *(FIXED 6/27/2020)
  
