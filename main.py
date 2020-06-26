@@ -17,14 +17,14 @@ def drawData(data):
     canvas.delete("all")
     c_height = 600
     c_width = 700
-    x_width = c_width / (len(data) - .5)
-    offset = 0
-    spacing = 20
+    x_width = c_width / (len(data) - .5)#20
+    offset = 100 - len(data) #20
+    spacing = 2
     normalizedData = [ i / max(data) for i in data]
     
     for i, height in enumerate(normalizedData):
         #top left
-        x0 = i * x_width + 5 + offset + spacing
+        x0 = i * x_width + 5.5 + offset + spacing
         y0 = c_height - height * 500
         #bottom right
         x1 = (i + 1) * x_width + offset
@@ -32,27 +32,18 @@ def drawData(data):
 
         canvas.create_rectangle(x0, y0, x1, y1, fill="#317773")
         canvas.create_text(x0+1, y0, anchor=SW, text=str(data[i]))
+    
+    root.update_idletasks()
 
-def Generate():
+def generate_data():
     print('Algorithm Selected: ' + algorithmList.get(algorithmList.curselection()))
     
-    try:
-        minValue = int(minimumScale.get())
-    except:
-        minValue = 1
-        
-    try:
-        maxValue = int(minimumScale.get())
-    except:
-        maxValue = 10
-        
-    try:
-        populationSize = int(populationScale.get())
-    except:
-        populationSize = 10
- 
+    minValue = int(minimumScale.get())
+    maxValue = int(maximumScale.get())
+    populationSize = int(populationScale.get())
+    
     sort.PopulateArray(minValue, maxValue, populationSize)
-
+    
     drawData(sort.array)
 
 #frame / base layout
@@ -76,19 +67,19 @@ algorithmList.insert(5, "Counting Sort")
 algorithmList.grid(row=0, column=0, pady=15, ipadx=10)
 
 # array size entry
-populationScale = Scale(UI_frame, from_=3, to=50, length =155, resolution=1, orient=HORIZONTAL, label="           Population Size",
+populationScale = Scale(UI_frame, from_=10, to=40, length =155, resolution=1, orient=HORIZONTAL, label="           Population Size",
                        fg='#317773', bg='white smoke', troughcolor='white smoke', activebackground='black',
                        font=("Dosis", 11))
 populationScale.grid(row=1, column=0, ipadx=10, ipady=5, padx=5, pady=5)
 
 # minimum value entry
-minimumScale = Scale(UI_frame, from_=1, to=10, length=155, digits=2, resolution=0.2, orient=HORIZONTAL,
+minimumScale = Scale(UI_frame, from_=1, to=50, length=155, digits=2, resolution=0.2, orient=HORIZONTAL,
                    fg='#317773', bg='white smoke', troughcolor='white smoke', activebackground='black', 
                    label="Minimum Value", font=("Dosis", 11))
 minimumScale.grid(row=2, column=0, ipadx=10, ipady=5, padx=5, pady=5)
 
 # maximum value scale
-maximumScale = Scale(UI_frame, from_=30, to=100, length=155, digits=2, resolution=0.2, orient=HORIZONTAL,
+maximumScale = Scale(UI_frame, from_=100, to=150, length=155, digits=2, resolution=0.2, orient=HORIZONTAL,
                    fg='#317773', bg='white smoke', troughcolor='white smoke', activebackground='black', 
                    label="           Maximum Value", font=("Dosis", 11))
 maximumScale.grid(row=3, column=0, ipadx=10, ipady=5, padx=5, pady=5)
@@ -100,10 +91,10 @@ speedScale = Scale(UI_frame, from_=0.1, to=2.0, length=155, digits=2, resolution
 speedScale.grid(row=4, column=0, padx=5, pady=5, ipadx=5, ipady=5)
 
 # generate button
-Button(UI_frame, text="Generate Array", command=Generate, fg='#317773', bg='white smoke', font=("Dosis", 10)).grid(row=5, column=0, padx=5, pady=5)
+Button(UI_frame, text="Generate Array", command=generate_data, fg='#317773', bg='white smoke', font=("Dosis", 10)).grid(row=5, column=0, padx=5, pady=5)
 
 # sort
-Button(UI_frame, text="  Sort Array  ", command=Generate, fg='#317773', bg='white smoke', font=("Dosis", 10)).grid(row=6, column=0, padx=50, pady=5)
+Button(UI_frame, text="  Sort Array  ", command=generate_data, fg='#317773', bg='white smoke', font=("Dosis", 10)).grid(row=6, column=0, padx=50, pady=5)
 
 
 root.mainloop()

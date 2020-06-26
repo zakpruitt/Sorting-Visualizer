@@ -17,28 +17,15 @@ class Sorter:
         
         for _ in range(populationSize): # _ = unused
             number = random.randint(minValue, maxValue+1)
-
+            
             if number in self.array:
                 # number generated is not distinct
                 while number in self.array:
-                    number = random.randint(1, 100)
+                    number = random.randint(minValue, maxValue+1)
                 self.array.append(number)
             else:
                 # number generated is distinct
                 self.array.append(number)
-                 
-    def ClearConsole(self):
-        """ Clears console. """
-        clear = lambda: os.system('cls')
-        clear()
-
-    def PrintArray(self, num1, num2):
-        """ Prints array, along with highlighting two elements being compared. """
-        for element in self.array:
-            if element == num1 or element == num2:
-                print(f"*{element}*", end = " ")
-            else:
-                print(element, end = " ")
         
     def BubbleSort(self):
         """ Sorts an array via swapping elements if the next is greater. """
