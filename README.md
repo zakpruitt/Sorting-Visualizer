@@ -14,7 +14,7 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Selection Sort Function
   - Merge Sort Function
   - Counting Sort Function
-  - Bubble Sort Drawn Data
+  - Bubble Sort Drawn Data *(ADDED 6/27/2020)
   - Insertion Sort Drawn Data
   - Selection Sort Drawn Data
   - Merge Sort Drawn Data
@@ -36,10 +36,13 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Sort Array Button *(ADDED 6/23/2020)
   - Population Scale Functionality *(ADDED 6/26/2020)
   - Maximum and Minimum Scale Functionality *(ADDED 6/26/2020)
-  - Delay Scale Functionality
+  - Delay Scale Functionality *(ADDED 6/27/2020)
   
 ## Temporary Features
   - Console-based print array function *(ADDED 6/15/2020)
   - Console clear function *(ADDED 6/15/2020)
 
+## Bug Fixes
+  - Timer Data Member Exception *(FIXED 6/27/2020)
+ 
 ## Contributors
