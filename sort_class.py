@@ -7,7 +7,6 @@ class Sorter:
     def __init__(self):
       """ Initializes Sorter object with just an array for a data member. """  
       self.array = []
-      self.stopwatch = stopwatch.Timer()
 
     def PopulateArray(self, minValue, maxValue, populationSize):
         """ Populates array with random, distinct integers. """
@@ -27,26 +26,19 @@ class Sorter:
                 # number generated is distinct
                 self.array.append(number)
         
-    def BubbleSort(self):
+    def BubbleSort(self, delay, draw_data):
         """ Sorts an array via swapping elements if the next is greater. """
-        self.stopwatch.start()
+        timer = stopwatch.Timer()
+        timer.start()
         passNumber = 0
 
         for i in range(len(self.array)):
             passNumber += 1
             for j in range(0, len(self.array) - i - 1): # last i elements are already in place 
-                # sleeps program for 1 second
-                time.sleep(1)
-                self.ClearConsole()
-
-                # bubble sort printing
-                print(f"Pass {passNumber}:", end = " ")
-                self.PrintArray(self.array[j], self.array[j+1])
-                print(f"\nComparing {self.array[j]} > {self.array[j + 1]}")
-                
-                if self.array[j] > self.array[j+1] :  # Swap if the element found is greater 
+                if self.array[j] > self.array[j+1] :  # Swap if the element found is greater    
                     self.array[j], self.array[j+1] = self.array[j+1], self.array[j]
-                    print(f"\nSwapped {self.array[j]} and {self.array[j + 1]}")
+                    draw_data(self.array, ['green' if x == j or x == j+1 else 'red' for x in range(len(self.array))] )
+                    time.sleep(delay)
         
-        print(self.stopwatch.stop())
+        print(timer.stop())
             

@@ -13,25 +13,27 @@ root.config(bg='white')
 #variables
 selected_alg = StringVar()
 
-def drawData(data):
+# draws rectangles
+def draw_data(array, colorArray):
     canvas.delete("all")
-    c_height = 600
-    c_width = 700
-    x_width = c_width / (len(data) - .5)#20
-    offset = 100 - len(data) #20
-    spacing = 2
-    normalizedData = [ i / max(data) for i in data]
+    canvas_height = 600
+    canvas_width = 700
+    x_width = canvas_width / (len(array) - .5)#20
+    offset = 100 - len(array) #20
+    space = 2
+    normalizedData = [ i / max(array) for i in array]
     
     for i, height in enumerate(normalizedData):
         #top left
-        x0 = i * x_width + 5.5 + offset + spacing
-        y0 = c_height - height * 500
+        x0 = i * x_width + 5.5 + offset + space
+        y0 = canvas_height - height * 500
         #bottom right
         x1 = (i + 1) * x_width + offset
-        y1 = c_height
+        y1 = canvas_height
 
-        canvas.create_rectangle(x0, y0, x1, y1, fill="#317773")
-        canvas.create_text(x0+1, y0, anchor=SW, text=str(data[i]))
+        canvas.create_rectangle(x0, y0, x1, y1, fill=colorArray[i])
+        #canvas.create_rectangle(x0, y0, x1, y1, fill="#317773")
+        canvas.create_text(x0+1, y0, anchor=SW, text=str(array[i]))
     
     root.update_idletasks()
 
@@ -44,14 +46,25 @@ def generate_data():
     
     sort.PopulateArray(minValue, maxValue, populationSize)
     
-    drawData(sort.array)
+    draw_data(sort.array, ['red' for x in range(len(sort.array))]) #['red', 'red' ,....]
+    #draw_data(sort.array)
 
+def start_sorting():
+    if algorithmList.get(ACTIVE) == "Bubble Sort":
+        sort.BubbleSort(float(delayScale.get()), draw_data)
+    
+    draw_data(sort.array, ['green' for x in range(len(sort.array))])
+    
+        
+        
 #frame / base layout
 UI_frame = Frame(root, width=200, height = 600, bg='#317773')
 UI_frame.grid(row=0, column= 1)
 
 canvas = Canvas(root, width=850, height=600, bg='white smoke', highlightthickness=0)
 canvas.grid(row=0, column=0)
+
+#Label(canvas, text="hello", justify=CENTER).grid(column=0, row=0)
 
 # algorithm list
 algorithmList = Listbox(UI_frame, fg='#317773', bg='white smoke', font=("Dosis", 11), height=6, justify=CENTER,
@@ -85,24 +98,16 @@ maximumScale = Scale(UI_frame, from_=100, to=150, length=155, digits=2, resoluti
 maximumScale.grid(row=3, column=0, ipadx=10, ipady=5, padx=5, pady=5)
 
 # speed scale entry
-speedScale = Scale(UI_frame, from_=0.1, to=2.0, length=155, digits=2, resolution=0.2, orient=HORIZONTAL,
+delayScale = Scale(UI_frame, from_=0.0, to=2.0, length=155, digits=2, resolution=0.2, orient=HORIZONTAL,
                    fg='#317773', bg='white smoke', troughcolor='white smoke', activebackground='black', 
                    label="                  Delay", font=("Dosis", 11))
-speedScale.grid(row=4, column=0, padx=5, pady=5, ipadx=5, ipady=5)
+delayScale.grid(row=4, column=0, padx=5, pady=5, ipadx=5, ipady=5)
 
 # generate button
 Button(UI_frame, text="Generate Array", command=generate_data, fg='#317773', bg='white smoke', font=("Dosis", 10)).grid(row=5, column=0, padx=5, pady=5)
 
 # sort
-Button(UI_frame, text="  Sort Array  ", command=generate_data, fg='#317773', bg='white smoke', font=("Dosis", 10)).grid(row=6, column=0, padx=50, pady=5)
+Button(UI_frame, text="  Sort Array  ", command=start_sorting, fg='#317773', bg='white smoke', font=("Dosis", 10)).grid(row=6, column=0, padx=50, pady=5)
 
-
-root.mainloop()
-
-# if __name__ == '__main__':
-#     sort = Sorter()
-#     sort.populateArray()
-#     sort.bubbleSort()
-#     print(sort.array)
-
-
+if __name__ == '__main__':
+    root.mainloop()
