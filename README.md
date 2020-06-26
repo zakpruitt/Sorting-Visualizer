@@ -14,11 +14,19 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Selection Sort Function
   - Merge Sort Function
   - Counting Sort Function
+  - Bubble Sort Drawn Data *(ADDED 6/27/2020)
+  - Insertion Sort Drawn Data
+  - Selection Sort Drawn Data
+  - Merge Sort Drawn Data
+  - Counting Sort Drawn Data
   
   ### GUI
   - Basic Layout Settup *(ADDED 6/23/2020)
-  - Color Scheme Identified
-  - Sorting Coloring Indicator
+  - Color Scheme Identified *(ADDED 6/26/2020)
+  - Sorting Coloring Indicator *(ADDED 6/26/2020)
+  - Color Scheme Picker
+  - Swapped Notification
+  - Speed Notification
   - Sort List Box *(ADDED 6/23/2020)
   - Population Size Scale *(ADDED 6/23/2020)
   - Minimum Value Scale *(ADDED 6/23/2020)
@@ -26,12 +34,22 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Delay Value Scale *(ADDED 6/23/2020)
   - Generate Array Button *(ADDED 6/23/2020)
   - Sort Array Button *(ADDED 6/23/2020)
-  - Population Scale Functionality
-  - Maximum and Minimum Scale Functionality
-  - Delay Scale Functionality
+  - Population Scale Functionality *(ADDED 6/26/2020)
+  - Maximum and Minimum Scale Functionality *(ADDED 6/26/2020)
+  - Delay Scale Functionality *(ADDED 6/27/2020)
   
 ## Temporary Features
   - Console-based print array function *(ADDED 6/15/2020)
   - Console clear function *(ADDED 6/15/2020)
 
+## Function Documentation
+  - Sort Class
+  - Sort Class Functions
+  - Main Module Functions
+  - Tkinter Notes
+  - Timer Class *(ADDED 6/16/2020)
+  - Timer Class Functions *(ADDED 6/16/2020)
+## Bug Fixes
+  - Timer Data Member Exception *(FIXED 6/27/2020)
+ 
 ## Contributors
