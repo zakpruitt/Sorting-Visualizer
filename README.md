@@ -24,7 +24,7 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Basic Layout Settup *(ADDED 6/23/2020)
   - Color Scheme Identified *(ADDED 6/26/2020)
   - Sorting Coloring Indicator *(ADDED 6/26/2020)
-  - Color Picker
+  - Color Scheme Picker
   - Swapped Notification
   - Speed Notification
   - Sort List Box *(ADDED 6/23/2020)
