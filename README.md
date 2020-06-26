@@ -14,11 +14,17 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Selection Sort Function
   - Merge Sort Function
   - Counting Sort Function
+  - Bubble Sort Drawn Data
+  - Insertion Sort Drawn Data
+  - Selection Sort Drawn Data
+  - Merge Sort Drawn Data
+  - Counting Sort Drawn Data
   
   ### GUI
   - Basic Layout Settup *(ADDED 6/23/2020)
-  - Color Scheme Identified
-  - Sorting Coloring Indicator
+  - Color Scheme Identified *(ADDED 6/26/2020)
+  - Sorting Coloring Indicator *(ADDED 6/26/2020)
+  - Color Picker
   - Sort List Box *(ADDED 6/23/2020)
   - Population Size Scale *(ADDED 6/23/2020)
   - Minimum Value Scale *(ADDED 6/23/2020)
@@ -26,8 +32,8 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Delay Value Scale *(ADDED 6/23/2020)
   - Generate Array Button *(ADDED 6/23/2020)
   - Sort Array Button *(ADDED 6/23/2020)
-  - Population Scale Functionality
-  - Maximum and Minimum Scale Functionality
+  - Population Scale Functionality *(ADDED 6/26/2020)
+  - Maximum and Minimum Scale Functionality *(ADDED 6/26/2020)
   - Delay Scale Functionality
   
 ## Temporary Features
