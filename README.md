@@ -46,5 +46,6 @@ Visualizes common sorting algorithms, such as bubble, insert, quick, etc. Writte
   - Tkinter Notes *(ADDED 6/27/2020)
   - Timer Class *(ADDED 6/16/2020)
   - Timer Class Functions *(ADDED 6/16/2020)
+  
 ## Bug Fixes 
   - Timer Data Member Exception *(FIXED 6/27/2020)
